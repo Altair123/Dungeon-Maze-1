@@ -5,10 +5,21 @@
 		<title>Nivel1</title>
 
 		<link rel="stylesheet" type="text/css" href="estilo.css" />
+		
+		 
+		// que se supone que esta sucediendo con las librerias
+		// sorry olvide que tenia que comentar lo que hacia
+		// estoy revisando las librerias por que al parecer
+		// XD no estan terminadas
+		// ... relax no es nada grave son corregir unas cuantas lineas por aqui y por alla
+		// ahora quiero ver por que no encuentra el documetn element en tus parametros
+		<script type="text/javascript" src="Bibliotecas/oop.js"></script>
+		 <script type="text/javascript" src="Bibliotecas/XMLHttpRequest.js"></script>
 		<script type="text/javascript" src="Bibliotecas/jsface.js"></script>
 		<script type="text/javascript" src="Bibliotecas/jgen.Math.js"></script>
+			<script type="text/javascript" src="Bibliotecas/jgen.String.js"></script>
 		<script type="text/javascript" src="Bibliotecas/jgen.HTML.js"></script>
-		<script type="text/javascript" src="Bibliotecas/jgen.String.js"></script>
+	
 		<script type="text/javascript" src="Bibliotecas/jgen.Event.js"></script>
 		<script type="text/javascript" src="Bibliotecas/jgen.Selector.js"></script>
 		<script type="text/javascript" src="Bibliotecas/jgen.EventQueue.js"></script>
@@ -29,13 +40,15 @@
 				alert("funcion start"); // ejecuta la pagina ok
 				var oMapViewPort = document.body;
 				var oMap = new TMap(oMapViewPort, oMapViewPort.offsetWidth, oMapViewPort.offsetHeight);
-				
+				// no llega ni a guardar en variables xD
 				alert("se ejecuto");
-				oMap.loadMap('mapasJuego/mapa1.xml', function() {
+				oMap.loadMap('/mapasJuego/mapa1', function() {
 					oMap.render(0, 0);
 					alert("se ejecuto");
 				});
 		}
+		//te golpear ia xd por que XDD, porque me das un proyecto para poder trabajar sobre mi trabajo que es practicamente el lunesxD
+		// aun queda un domingo relax
 		
 		// no puedes ejecutar codigo directamente si lo escribes en la cabecera
 		// solo funcona si lo escribes en el body, por eso debes encerrarlo en una funcion

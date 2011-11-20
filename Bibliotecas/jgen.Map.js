@@ -124,6 +124,8 @@ var TMap = Class.create({
 		var oThis = this;
 		var oXMLHttpRequest = new XMLHttpRequest;
 		oXMLHttpRequest.open("GET", sMapUrl, true);
+		
+		// el request a tu mapa devuelve un nulo, ahora veremos por que :)
 		oXMLHttpRequest.onreadystatechange = function() {
 			if (this.readyState != XMLHttpRequest.DONE) return;
 			oThis.processMap(this.responseXML.documentElement);
