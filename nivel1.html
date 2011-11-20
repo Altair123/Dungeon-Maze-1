@@ -16,14 +16,40 @@
 		<script type="text/javascript" src="Bibliotecas/jgen.Sprite.js"></script>
 		<script type="text/javascript">
 
-		
+		   // se crea el objeto de map view port y tambi'en el oMap para poder mostrar el mapa q se encuentra en mi carpeta D
+		 // observacion : oMapViewPort guarda una referencia del cuerpo de la pagina no el mapa
+		 // por eso puedes usarlo para averiguar sus dimesiones con offsetWidth
+		 // creo un objeto que contenga las medidas de la pagina para poder luego tenerlas al crear mi objeto mapa_?
+		 // creas un objeto que contenga el cuerpo del documento, incluyendo todas sus propiedades
+		 // esos parametros del TMap
+		 // que era el TMap?? :s  eso estoy buscando al parecer es un objeto propio de la libreroa
+		 // que contiene el mapa en memoria
+		 function start() {
+		 
+				alert("funcion start"); // ejecuta la pagina ok
 				var oMapViewPort = document.body;
 				var oMap = new TMap(oMapViewPort, oMapViewPort.offsetWidth, oMapViewPort.offsetHeight);
+				
+				alert("se ejecuto");
 				oMap.loadMap('mapasJuego/mapa1.xml', function() {
 					oMap.render(0, 0);
-					
-					
-				
+					alert("se ejecuto");
+				});
+		}
+		
+		// no puedes ejecutar codigo directamente si lo escribes en la cabecera
+		// solo funcona si lo escribes en el body, por eso debes encerrarlo en una funcion
+		// esa funcion peude ser llamada al cargar la pagina
+				// oMap es una referencia, que tiene los metodos de TMap uno de ellos es
+				// loadMap que carga la definicion escrita en el archivo del mapa
+				//render, ya lo esta poniendo D: 
+				// ahi solo lo carga enmemoria, usa una tecnica del desarrollo de juegos
+				// que es primero dibuja en memoria luego en pantalla
+				// como podria mostrar el mapa entonces
+				// luego de darle la url del mapa, hay una funcion que ejecutara cuando termine de cargar
+				// el mapa en memoria, y en esa funcion ves un
+				// oMap.render el cual dibuja en la pantalla el mapa
+				// ahi cargara el mapa/ :S???
 		</script>
 		
 		
