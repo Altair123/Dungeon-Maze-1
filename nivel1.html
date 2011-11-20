@@ -6,12 +6,15 @@
 		var rpg;
 		window.onload = function() {
 			rpg = new Rpg("canvas_rpg");
-			rpg.loadMap('Temple2', {
-				tileset: 'Grotte 2.png',
+			rpg.loadMap('Town', {
+				tileset: 'village.png',
 				player:  {
 					x: 26, 
 					y: 18, 
-					filename: '017-Thief02.png'
+					direction: 'up',
+					filename: 'Hero.png', 
+					regX: 35, 
+					regY: 68, 
 				}
 			}, function () { 
 				rpg.setScreenIn("Player"); 
@@ -19,7 +22,7 @@
 		}	
 	</script>	
  </head>
-  <body >
+  <body style="margin: 0; overflow: hidden; background-color: #000;">
 		<canvas id="canvas_rpg" width="640px" height="480px"></canvas> 
   </body>
 </html>
