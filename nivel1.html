@@ -6,18 +6,21 @@
 		var rpg;
 		window.onload = function() {
 			rpg = new Rpg("canvas_rpg");
-			rpg.loadMap('Town', {
+			rpg.loadMap('Town2', {
 				tileset: 'village.png',
+
 				player:  {
 					x: 26, 
 					y: 18, 
 					direction: 'up',
-					filename: 'Hero.png', 
+					filename: '006-Fighter06.png', 
 					regX: 35, 
 					regY: 68, 
-				}
+				},
+				 
+			 
 			}, function () { 
-				rpg.setScreenIn("Player"); 
+				rpg.setScreenIn("player");  
 			});
 		}	
 	</script>	
