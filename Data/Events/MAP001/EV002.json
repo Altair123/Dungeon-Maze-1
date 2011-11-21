@@ -1,0 +1,26 @@
+[
+    {
+      "x": 5,
+      "y": 9,
+      "id": "2",
+      "name": "EV002"
+    },
+    [
+        {
+            "character_hue": "057-Snake03.png","pattern": 0,
+            "trigger": "contact",
+            "direction": "bottom",
+            "frequence": 16,
+            "type": "custom",
+            "through": false,
+            "stop_animation": false,
+            "no_animation": false,
+            "direction_fix": false,
+            "alwaysOnTop": false,
+            "speed": 5,
+            "commands": [
+              
+            ]
+        }
+    ]
+]

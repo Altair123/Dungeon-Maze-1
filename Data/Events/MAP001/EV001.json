@@ -1,0 +1,27 @@
+[
+    {
+      "x": 11,
+      "y": 5,
+      "id": "1",
+      "name": "EV001"
+    },
+    [
+        {
+            
+            
+            "trigger": "event_contact",
+            "direction": "bottom",
+            "frequence": 16,
+            "type": "fixed",
+            "through": false,
+            "stop_animation": true,
+            "no_animation": false,
+            "direction_fix": false,
+            "alwaysOnTop": true,
+            "speed": 4,
+            "commands": [
+              ""
+            ]
+        }
+    ]
+]

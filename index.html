@@ -1,56 +1,32 @@
-<!doctype html>
-
-
-<html>
-	<head>
-		<title>Doungeon Maze </title>
-		
-		<link rel="stylesheet" href="estilos.css" type="text/css" media="screen" />
-	</head>
-	
-
-	<body>
-	<div id="formulario">
-		<form method="post" action="evaluador.php" name="form_evalua">
-			<div id="datos">
-				<label for="txt_nombre">Nombre:</label> <input type="text" name="txt_nombre" id="txt_nombre" class="texto"/><br/>
-				
-			
-				
-			</div>
-			<div id="clases">	
-			
-				
-				<ul >
-			
-					<li id="li_1" >
-						<label class="description">Characters </label><br/>
-						<span>
-							<input id="element_1_1" name="element_1" class="element radio" type="radio" value="Class: Warrior Atack: 10 Defense: 14 Damage: 15 Life: 100 "  />
-							<label class="choice" for="element_1_1">Warrior</label>
-							<input id="element_1_2" name="element_1" class="element radio" type="radio" value="Class: Warrior Atack: 5 Defense: 16 Damage: 5 Life: 150 "  />
-							<label class="choice" for="element_1_2">Cleric</label>
-							<input id="element_1_3" name="element_1" class="element radio" type="radio" value="Class: Warrior Atack: 10 Defense: 12 Damage: 20 Life: 50 "  />
-							<label class="choice" for="element_1_3">Valkyria</label>
-
-						</span> 
-					</li>		
-					
-					
-					<li id="li_buttons" class="buttons">
-						<input type="hidden" name="form_id" value="7" />
-			    
-						<input type="hidden" name="submit" value="1" />
-						<input id="saveForm" class="button_text" type="submit" name="submit" value="Start" />
-					</li>
-				</ul>
-				
-				
-			</div>
-	
-		</form>
-	</div>
-	
-	</body>
-
+<!DOCTYPE html>
+<html>
+  <head>
+	<script src="rpg-beta.min.js"></script> 
+	<script src="game_engine.js"></script> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script>
+		var rpg;
+		window.onload = function() {
+			rpg = new Rpg("canvas_rpg");
+			rpg.loadMap('MAP001', {
+				tileset: '001-Grassland01.png',
+				events: ['EV004', 'EV002', 'EV005'],
+				player:  {
+					x: 5, 
+					y: 5, 
+					filename: '001-Fighter01.png'
+				},
+				 
+			}, function () { 
+				rpg.setScreenIn("Player"); 
+				var ev = rpg.getEventByName('EV002');
+				ev.move(6,6);
+			});
+			
+		}	
+	</script>	
+ </head>
+  <body style="margin: 0; overflow: hidden; background-color: #000;">
+		<canvas id="canvas_rpg" width="640px" height="480px"></canvas> 
+  </body>
 </html>
