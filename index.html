@@ -4,9 +4,11 @@
 	<script src="rpg-beta.min.js"></script> 
 	<script src="game_engine.js"></script> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="estilo.css" />
 	<script>
-		var rpg;
+	var rpg;
 		window.onload = function() {
+			load_game();
 			rpg = new Rpg("canvas_rpg");
 			rpg.loadMap('MAP001', {
 				tileset: '001-Grassland01.png',
@@ -16,17 +18,95 @@
 					y: 5, 
 					filename: '001-Fighter01.png'
 				},
-				 
+				transfert: [{
+					x: 0,
+					y: 5,
+					x_final: 16,
+					y_final: 2,
+					map: 'MAP002',
+					direction: 'left'
+				}]
 			}, function () { 
+			
+			
 				rpg.setScreenIn("Player"); 
-				var ev = rpg.getEventByName('EV002');
-				ev.move(6,6);
+				
+				ev1=rpg.getEventByName("EV004");
+				ev2=rpg.getEventByName("EV002");
+				ev3=rpg.getEventByName("EV005");
+				
+				set_intervals();
+				
+				 rpg.bind('eventCall_atack1', function() { alert("call"); });
+				 rpg.bind('eventCall_atack2', function() { ataque(2); });
+				 rpg.bind('eventCall_atack3', function() { ataque(3); });
+				 
+				 
 			});
 			
+			rpg.prepareMap('MAP002', {
+				tileset: '001-Grassland01.png',
+				events: ['EV001', 'EV002', 'EV003'],
+				transfert: [{
+					x: 0,
+					y: 6,
+					x_final: 16,
+					y_final: 2,
+					map: 'MAP003',
+					direction: 'left'
+				}]
+			}, function () { 
+				rpg.setScreenIn("Player"); 
+				
+				ev1=rpg.getEventByName("EV001");
+				ev2=rpg.getEventByName("EV002");
+				ev3=rpg.getEventByName("EV003");
+				
+				set_intervals();
+				 
+				 rpg.bind('eventCall_atack1', function(event) { ataque(1); });
+				 rpg.bind('eventCall_atack2', function(event) { ataque(2); });
+				 rpg.bind('eventCall_atack3', function(event) { ataque(3); });
+				 
+			});
+			
+			rpg.prepareMap('MAP003', {
+				tileset: '001-Grassland01.png',
+				events: ['EV001', 'EV002', 'EV003'],
+				transfert: [{
+					x: 0,
+					y: 6,
+					x_final: 16,
+					y_final: 2,
+					map: 'MAP004',
+					direction: 'right'
+				}]
+			}, function () { 
+				rpg.setScreenIn("Player"); 
+				
+				ev1=rpg.getEventByName("EV001");
+				ev2=rpg.getEventByName("EV002");
+				ev3=rpg.getEventByName("EV003");
+				
+				set_intervals();
+
+				rpg.bind('eventCall_atack1', function(event) { ataque(1); });
+				 rpg.bind('eventCall_atack2', function(event) { ataque(2); });
+				 rpg.bind('eventCall_atack3', function(event) { ataque(3); });
+				
+			});
+			
+			
+			
 		}	
+				 
 	</script>	
  </head>
   <body style="margin: 0; overflow: hidden; background-color: #000;">
-		<canvas id="canvas_rpg" width="640px" height="480px"></canvas> 
+  	     <div > Vida : <p id="puntos"/></div>
+		<div > Vida Enemigo 1 : <p id="e1"/></div>
+		<div > Vida Enemigo 2 : <p id="e2"/></div>
+		<div > Vida Enemigo 3 : <p id="e3"/></div>
+	 <center><canvas id="canvas_rpg" width="640px" height="480px"></canvas></center> 
   </body>
 </html>
